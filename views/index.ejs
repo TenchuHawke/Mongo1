@@ -9,9 +9,20 @@
 </head>
 
 <body>
-    <form>
-        Fully installed
+    <ul>
+    <% if(typeof errors != 'undefined'){    %>
+        <% for(var index in errors){ %>
+        <li> <%= errors[index].error%></li>
+    <% }} %>
+    </ul>
+    
+    <form action="/quotes" method="post">
+        Name: <input type="text" name="name">
+        <br> Quote: <input type="text" name="quote">
+        <button type="sumbit">SUBMIT!!!</button>
     </form>
+        <a href="/quotes">Just see quotes</a>
 </body>
+
 
 </html>
